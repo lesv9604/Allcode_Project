@@ -1,7 +1,9 @@
 package com.example.demo.controller
 
-import com.example.demo.model.Customer
+import com.example.demo.config.ActiveConfig
+
 import com.example.demo.repo.CustomerRepository
+import org.json.JSONObject
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.web.bind.annotation.*
@@ -11,11 +13,13 @@ class WebController {
 
     @Autowired
     lateinit var repository: CustomerRepository
+    var rec = ActiveConfig().message
+
 
     @RequestMapping("/save")
     fun save(): String {
-        repository.save(Customer("nombre_1","apellido"))
-        repository.save(Customer("nombre_2", "apellido_2"))
+        repository.save(rec)
+
 
         return "Done"
     }
@@ -32,31 +36,3 @@ class WebController {
             = repository.findByLastName(lastName)
 
 }
-
-
-
-
-
-
-    /*@GetMapping("Find")
-    fun getAllCustomer(): MutableIterable<Customer> {
-        return repository.findAll()
-    }*/
-   /*
-    @PostMapping("/save")
-    fun save(): String{
-        repository.save(Customer("persona_2", "Apellido_2"))
-
-        return "Done"
-
-    }
-    @RequestMapping("/findall")
-    fun findAll() = repository.findAll()
-
-    @RequestMapping("/findbyId/{id}")
-    fun findById(@PathVariable id: Long)
-            = repository.findById(id)
-
-    @RequestMapping("findbylastname/{lastname}")
-    fun findByLastName(@PathVariable lastName: String)
-            =repository.findByLastName(lastName)*/

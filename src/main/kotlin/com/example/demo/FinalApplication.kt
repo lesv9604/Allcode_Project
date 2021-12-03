@@ -8,8 +8,11 @@ import org.springframework.boot.runApplication
 class FinalApplication
 
 fun main(args: Array<String>) {
-	/*val rec = ActiveConfig()
+
+	val rec = ActiveConfig()
 	rec.sendAndReceiver()
-	println("Usuario enviado a cola")*/
+	println(rec.message)
 	runApplication<FinalApplication>(*args)
+
+
 }
