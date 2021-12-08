@@ -1,0 +1,26 @@
+{
+  "group":"Register Users",
+  "cantd": 3,
+  "User": [
+    {
+      "username": "User_1",
+      "id": 1,
+      "type_User": "vip",
+      "status": true
+    },
+    {
+      "username": "User_2",
+      "id": 2,
+      "type_User": "free",
+      "status": false
+    },
+    {
+      "username": "User_3",
+      "id": 3,
+      "type_User": "free",
+      "status": true
+    }
+
+  ]
+
+}

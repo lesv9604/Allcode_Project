@@ -4,9 +4,12 @@ import com.example.demo.model.Customer
 import org.apache.activemq.ActiveMQConnectionFactory
 
 import javax.jms.Session
+import javax.swing.UIManager.getString
 
 
 class ActiveConfig {
+
+
     var message = Customer("User1","lastUser1")
     val connFactory = ActiveMQConnectionFactory()
     val conn = connFactory.createConnection()!!
